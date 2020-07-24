@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Create employee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div layout:fragment="content1">
+    <div class="col-md-6">
+        <form th:action="@{/admin/save}" method="post">
+            <div class="form-group">
+                <label class="custom-control-label">firstName</label>
+                <input class="form-control" type="text" name="firstName" th:value="${employe.firstName}">
+                <span class="text-danger" th:errors="${employe.firstName}"></span>
+            </div>
+            <div class="form-group">
+                <label class="custom-control-label">lastName</label>
+                <input class="form-control" type="text" name="lastName" th:value="${employe.lastName}">
+                <span class="text-danger" th:errors="${employe.lastName}"></span>
+            </div>
+            <div class="form-group">
+                <label class="custom-control-label">salary</label>
+                <input class="form-control" type="text" name="salary" th:value="${employe.salary}">
+                <span class="text-danger" th:errors="${employe.salary}"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
